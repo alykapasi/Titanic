@@ -20,6 +20,9 @@ def generate_features(df: pd.DataFrame) -> pd.DataFrame:
     # age group
     df["Age Group"] = pd.cut(df["Age"], bins=[0, 12, 18, 65, np.inf], labels=["Child", "Teenager", "Adult", "Senior"])
 
+    # fare per person
+    df["FarePerPerson"] = df["Fare"] / df["Family Size"]
+
     # cabin
     # just need the cabin code, not the number
     df["Cabin"] = df["Cabin"][0]
