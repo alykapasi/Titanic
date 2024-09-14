@@ -23,9 +23,4 @@ def generate_features(df: pd.DataFrame) -> pd.DataFrame:
     # fare per person
     df["FarePerPerson"] = df["Fare"] / df["Family Size"]
 
-    # cabin
-    # just need the cabin code, not the number
-    df["Cabin"] = df["Cabin"][0]
-    df["Cabin"] = df["Cabin"].fillna("U")
-
     return df
